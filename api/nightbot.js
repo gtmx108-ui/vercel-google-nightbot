@@ -3,9 +3,9 @@ export default async function handler(req, res) {
     const q = req.query.q || "Hello";
     const debug = req.query.debug === "true"; // 判斷是否開啟 debug 模式
 
-    // 呼叫 Google Gemini API
+    // 呼叫 Google Gemini API (改成 gemini-1.5-flash 或 gemini-1.5-pro)
     const response = await fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" +
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" +
         process.env.GOOGLE_API_KEY,
       {
         method: "POST",
